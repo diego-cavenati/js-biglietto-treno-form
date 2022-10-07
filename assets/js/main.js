@@ -1,15 +1,17 @@
 /*************************
  calculate ticket price
 **************************/
+let userKm;
+let userAge;
 
-// 1 - ask the user the number of kilometres he/she wants to travel
-// const userKm = Number(prompt("how many kilometres do you want to cover?"));
-const userKm = document.getElementById("userKm").value;
-console.log(userKm);
-
-// 2 - ask the user age
-// const userAge = Number(prompt("How old are you?"));
-
+function formInfo() {
+    // 1 - ask the user the number of kilometres he/she wants to travel
+    userKm = document.getElementById("userKm").value;
+    //console.log(userKm);
+    // 2 - ask the user age
+    userAge = document.getElementById("userAge").value;
+    //console.log(userAge);
+}
 
 // 3 - calculate the total price of the trip:
 // ticket price is defined according to km (0.21 € per km)
@@ -24,14 +26,9 @@ const discountMinors = (ticketFullPrice / 100) * 20;
 // 40% discount for the over 65s
 const discountOver = (ticketFullPrice / 100) * 40;
 
-// prompt validation number userKm
-if (isNaN(userKm) || isNaN(userAge)) {
-    
-    // alert(" is not a number");
-    // document.getElementById(`ticket_price`).innerHTML = "try again and enter numbers this time";
 
-} else { // The output final price with a maximum of two decimal
-
+// The output final price with a maximum of two decimal
+// if (userKm == true && userAge == true) {
     if (userAge <= 18) {
 
         document.getElementById(`ticket_price`).innerHTML = ((ticketFullPrice - discountMinors).toFixed(2) + " €");
@@ -51,7 +48,9 @@ if (isNaN(userKm) || isNaN(userAge)) {
         document.getElementById(`discount_message`).innerHTML = "Based on your age you are not entitled to discounts";
 
     }
-}
+// }
+
+
 
 
 /* Scrivere un programma che chieda all’utente:
@@ -63,3 +62,40 @@ va applicato uno sconto del 40% per gli over 65.
 MILESTONE 1:
 Iniziamo implementando il programma senza alcuna estetica: usando esclusivamente due input e un bottone (non stilizzati), realizziamo le specifiche scritte sopra.
 La risposta finale (o output) sarà anch’essa da scrivere in console. */
+
+
+// const userKm = Number(prompt("how many kilometres do you want to cover?"));
+// const userKm = document.getElementById("userKm").value;
+// console.log(userKm);
+// const userAge = Number(prompt("How old are you?"));
+
+
+// if (isNaN(userKm) || isNaN(userAge)) {
+    
+//     alert(" is not a number");
+//     document.getElementById(`ticket_price`).innerHTML = "try again and enter numbers this time";
+
+// } else { // The output final price with a maximum of two decimal
+
+//     if (userAge <= 18) {
+
+//         document.getElementById(`ticket_price`).innerHTML = ((ticketFullPrice - discountMinors).toFixed(2) + " €");
+
+//         document.getElementById(`discount_message`).innerHTML = "You are a minor and are entitled to 20% discount";
+
+//     } else if (userAge >= 65) {
+
+//         document.getElementById(`ticket_price`).innerHTML = ((ticketFullPrice - discountOver).toFixed(2) + " €");
+
+//         document.getElementById(`discount_message`).innerHTML = "You are over 65s and are entitled to 40% discount";
+
+//     } else {
+
+//         document.getElementById(`ticket_price`).innerHTML = (ticketFullPrice.toFixed(2) + " €");
+
+//         document.getElementById(`discount_message`).innerHTML = "Based on your age you are not entitled to discounts";
+
+//     }
+// }
+
+// prompt validation number userKm
