@@ -102,6 +102,10 @@ h2 {
     border-radius: 0.5rem;
 }
 
+.ticket .col {
+    padding: 1.5rem 1rem;
+}
+
 .name {
     background-color: rgb(225, 225, 225);
     border-radius: 0.5rem;
@@ -110,12 +114,25 @@ h2 {
 .ticket h3 {
     padding-top: 1rem;
     padding-bottom: 2rem;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    color: rgb(77, 77, 77);
 }
 
+#ticket_name {
+    font-size: 1.8rem;
+    color: green;
+}
 
+#discount_message {
+    font-style: italic;
+    color: red;
+}
 
-
+#ticket_price {
+    color: green;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
 
 
 
