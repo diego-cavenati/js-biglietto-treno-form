@@ -16,8 +16,14 @@ main {
     padding: 9rem 0;
 }
 
+.user_info {
+    display: flex;
+    justify-content: center;
+}
 
-
+.user_info input {
+    padding: 2rem;
+}
 
 
 

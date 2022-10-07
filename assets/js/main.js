@@ -1,34 +1,41 @@
 /*************************
  calculate ticket price
 **************************/
-let userKm;
-let userAge;
 
-function formInfo() {
+const userClick = document.getElementById("user_click")
+
+
+
+userClick.addEventListener("click", function() {
     // 1 - ask the user the number of kilometres he/she wants to travel
-    userKm = document.getElementById("userKm").value;
-    //console.log(userKm);
+    const userKm = document.getElementById("userKm").value;
+
     // 2 - ask the user age
-    userAge = document.getElementById("userAge").value;
-    //console.log(userAge);
-}
+    const userAge = document.getElementById("userAge").value;
 
-// 3 - calculate the total price of the trip:
-// ticket price is defined according to km (0.21 € per km)
-const priceKm = 0.21;
+    // 3 - calculate the total price of the trip:
+    // ticket price is defined according to km (0.21 € per km)
+    const priceKm = 0.21;
 
-// ticket price without discounts
-const ticketFullPrice = priceKm * userKm;
+    // ticket price without discounts
+    const ticketFullPrice = priceKm * userKm;
 
-// 20% discount for minors
-const discountMinors = (ticketFullPrice / 100) * 20;
+    // 20% discount for minors
+    const discountMinors = (ticketFullPrice / 100) * 20;
 
-// 40% discount for the over 65s
-const discountOver = (ticketFullPrice / 100) * 40;
+    // 40% discount for the over 65s
+    const discountOver = (ticketFullPrice / 100) * 40;
 
 
-// The output final price with a maximum of two decimal
-// if (userKm == true && userAge == true) {
+    // The output final price with a maximum of two decimal
+    
+    if (isNaN(userKm) || isNaN(userAge)) {
+        
+        alert(" is not a number");
+        document.getElementById(`ticket_price`).innerHTML = "try again and enter numbers this time";
+
+    } else {
+
     if (userAge <= 18) {
 
         document.getElementById(`ticket_price`).innerHTML = ((ticketFullPrice - discountMinors).toFixed(2) + " €");
@@ -48,8 +55,10 @@ const discountOver = (ticketFullPrice / 100) * 40;
         document.getElementById(`discount_message`).innerHTML = "Based on your age you are not entitled to discounts";
 
     }
-// }
-
+    
+    }
+}
+)
 
 
 
@@ -97,5 +106,3 @@ La risposta finale (o output) sarà anch’essa da scrivere in console. */
 
 //     }
 // }
-
-// prompt validation number userKm
