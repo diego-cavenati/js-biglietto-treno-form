@@ -2,10 +2,10 @@
  calculate ticket price
 **************************/
 
+// defined userClick in the document via ID
 const userClick = document.getElementById("user_click")
 
-
-
+// event triggering the calculation of the ticket
 userClick.addEventListener("click", function() {
     // 1 - ask the user the number of kilometres he/she wants to travel
     const userKm = document.getElementById("userKm").value;
@@ -28,7 +28,7 @@ userClick.addEventListener("click", function() {
 
 
     // The output final price with a maximum of two decimal
-    
+    // number validation
     if (isNaN(userKm) || isNaN(userAge)) {
         
         alert(" is not a number");
@@ -55,7 +55,7 @@ userClick.addEventListener("click", function() {
         document.getElementById(`discount_message`).innerHTML = "Based on your age you are not entitled to discounts";
 
     }
-    
+
     }
 }
 )

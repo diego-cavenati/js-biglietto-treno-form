@@ -3,7 +3,7 @@
     <head>
         <meta charset='utf-8'> 
         <meta name='viewport' content='width=device-width, initial-scale=1'>
-        <title>Quanto costa il tuo biglietto?</title>
+        <title>Trenord - Calculate your ticket price</title>
         <!-- Font awesome -->
         <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css'>
         <!-- Bootstrap CSS -->
@@ -13,24 +13,33 @@
     </head>
     <body>
 
+        <header>
+            <div class="container-fluid p-4">
+                <img class="logo" src="./assets/img/Trenord_logo.png" alt="Logo Trenord">
+            </div>
+        </header>
 
         <!-- main -->
         <main>
-            <div class="container px-5">
-                <div class="main_card">
-                    <div class="user_info">
-                        <input id="userKm" name="userKm" type="text" placeholder="">
-                        <input id="userAge" name="userAge" type="text" placeholder="">
-                        <button id="user_click">Invia</button>
-                    </div>
-                    <div class="results">
-                        <span id="ticket_price"></span>
-                        <span id="discount_message"></span>
+            <div class="filter">
+                <div class="container px-5">
+                    <div class="main_card">
+
+                        <h1 class="text-center pb-4">Calculate your ticket price
+                        </h1>
+                        <div class="user_info">
+                            <input id="userKm" name="userKm" type="text" placeholder="How many km do you want to do?">
+                            <input id="userAge" name="userAge" type="text" placeholder="What is your age?">
+                            <button class="btn btn_send" id="user_click">Invia</button>
+                        </div>
+                        <div class="results">
+                            <span id="ticket_price"></span>
+                            <span id="discount_message"></span>
+                        </div>
                     </div>
                 </div>
             </div>
         </main>
-
 
 
 
